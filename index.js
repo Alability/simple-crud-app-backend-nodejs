@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 //routes
 app.use('/api/products', productRoute);
 
-mongoose.connect('mongodb+srv://Alability:4iNqdrMAqqduDdrS@cluster0.rst9v.mongodb.net/Node-API?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect(`mongodb+srv://Alability:${process.env.MONGODBPASSWORD}@cluster0.rst9v.mongodb.net/Node-API?retryWrites=true&w=majority&appName=Cluster0`)
     .then(() => {
         console.log('Connected to database!')
         app.listen(3000, () => {
